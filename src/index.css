@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@theme {
+  --color-main: #be2600;
+  --color-black-glass: #0000008e;
+  --color-ghost-white: #f9fafb;
+  --color-footer-bg: #000000e8;
+  --color-icon-bg: #272626d4;
+  --color-sec-title: #f9fafb8a;
+}
+
+@layer base {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-image: url("../public/img/bg2.jpg");
+    @apply min-h-screen bg-cover bg-center bg-no-repeat;
+  }
+}
