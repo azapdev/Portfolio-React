@@ -4,7 +4,7 @@ import type { FC } from "react";
 const About: FC = () => {
   return (
     <>
-      <div className=" max-w-6xl grid grid-cols-1 lg:grid-cols-[70%_30%] gap-5 items-start justify-center  p-4 m-auto mt-30 bg-black-glass lg:h-[calc(100vh-150px)] content-center  min-h-96">
+      <div className="max-w-6xl grid grid-cols-1 lg:grid-cols-[70%_30%] gap-5 p-4 mx-auto bg-black-glass items-center justify-center h-full my-14">
         {/* info */}
         <div className="flex items-start flex-col ms-8 gap-6 p-5">
           {/* ABOUT ME */}

@@ -23,7 +23,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky bg-black/60 backdrop-blur-md py-4 px-5 flex flex-row items-center justify-between top-0 max-w-6xl mx-auto z-40 md:px-8 md:py-0">
+    <header className="sticky bg-black/60 backdrop-blur-md py-4 px-5 flex flex-row items-center justify-between top-0 max-w-6xl mx-auto z-40 md:px-8 md:py-0 w-full">
       {/* logo */}
       <div className="cursor-pointer md:block">
         <img
