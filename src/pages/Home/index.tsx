@@ -33,7 +33,7 @@ const Home: FC = () => {
         </div>
         <Link
           to={"/about"}
-          className="text-white uppercase bg-main font-bold px-8 py-2 text-2xl rounded-3xl my-4 outline-main tracking-wider "
+          className="text-main border-main border-2 uppercase font-bold px-8 py-2 text-2xl rounded-3xl my-4 transition duration-150 tracking-wider hover:bg-main hover:text-white "
         >
           {" "}
           Resume

@@ -92,11 +92,11 @@ const About: FC = () => {
                 </span>
               </a>
 
-              {/* <!-- GITHUP --> */}
+              {/* <!-- GITHUB --> */}
               <a href="" className="flex items-center w-fit group gap-2">
                 <i className="fa-brands fa-github text-white size-4 brightness-50 group-hover:brightness-125 transition duration-200"></i>
                 <span className="text-white text-sm brightness-50 tracking-[1.5px] group-hover:text-main group-hover:brightness-125 transition duration-200">
-                  Github
+                   
                 </span>
               </a>
 
