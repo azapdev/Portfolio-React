@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint:format": "npx prettier . --write",
+    "lint:fix": "eslint .",
+    "lint": "npm run lint:fix && npm run lint:format"
   },
   "dependencies": {
     "axios": "^1.13.4",
@@ -30,6 +32,7 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "prettier": "3.8.1",
     "tailwindcss": "^4.1.18",
     "typescript": "~5.9.3",
     "typescript-eslint": "^8.46.4",
