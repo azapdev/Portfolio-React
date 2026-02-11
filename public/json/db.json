@@ -1,0 +1,49 @@
+{
+  "en": {
+    "HEADER": {
+      "HOME": "Home",
+      "ABOUT": "About",
+      "WORKS": "Works"
+    },
+    "HOMEpage": {
+      "NAME": "Ahmed Elazap",
+      "I_WAS": "I am",
+      "FRONT_END": "Front-End Developer",
+      "WEB_DEVELOPER": "Web Developer",
+      "RESUME": "Resume"
+    },
+    "ABOUTpage": {
+      "ABOUT_ME": "About Me",
+      "DESCRIPTION": "I'm a software engineer with 1 year of experience in Front-End development",
+      "SKILL": "Skills",
+      "TECHNOLOGIES": "& Technologies"
+    },
+    "WORKpage": {
+      "COMING_SOON": "Coming Soon"
+    }
+  },
+
+  "ar": {
+    "HEADER": {
+      "HOME": "الرئيسية",
+      "ABOUT": "من أنا",
+      "WORKS": "الأعمال"
+    },
+    "HOMEpage": {
+      "NAME": "أحمد العزب",
+      "I_WAS": "أنا",
+      "FRONT_END": "مطور واجهات أمامية",
+      "WEB_DEVELOPER": "مطور ويب",
+      "RESUME": "السيرة الذاتية"
+    },
+    "ABOUTpage": {
+      "ABOUT_ME": "من أنا",
+      "DESCRIPTION": "أنا مهندس برمجيات لدي سنة خبرة في تطوير الواجهات الأمامية",
+      "SKILL": "المهارات",
+      "TECHNOLOGIES": "و التقنيات"
+    },
+    "WORKpage": {
+      "COMING_SOON": "قريباً"
+    }
+  }
+}
