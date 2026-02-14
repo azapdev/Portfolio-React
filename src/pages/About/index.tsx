@@ -2,6 +2,53 @@ import { motion } from "framer-motion";
 import type { FC } from "react";
 
 const About: FC = () => {
+  type Skill = {
+    label: string;
+    icon: string;
+    link: string;
+  };
+  const skills: Skill[] = [
+    {
+      label: "HTML",
+      icon: "fa-brands fa-html5",
+      link: "",
+    },
+    {
+      label: "CSS",
+      icon: "fa-brands fa-css3",
+      link: "",
+    },
+    {
+      label: "SCSS",
+      icon: "fa-brands fa-sass",
+      link: "",
+    },
+    {
+      label: "Javascript",
+      icon: "fa-brands fa-js",
+      link: "",
+    },
+    {
+      label: "Bootstrap",
+      icon: "fa-brands fa-bootstrap",
+      link: "",
+    },
+    {
+      label: "TailwindCSS",
+      icon: "/icons/icons8-tailwindcss-48.svg",
+      link: "",
+    },
+    {
+      label: "Github",
+      icon: "fa-brands fa-github",
+      link: "",
+    },
+    {
+      label: "Typescript",
+      icon: "/icons/icons8-typescript-48.svg",
+      link: "",
+    },
+  ];
   return (
     <>
       <div className="max-w-6xl grid grid-cols-1 lg:grid-cols-[70%_30%] gap-5 p-4 mx-auto bg-black-glass items-center justify-center h-full my-14">
@@ -39,78 +86,29 @@ const About: FC = () => {
             </h2>
             {/* tec */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">
-              {/* HTML */}
-              <a href="" className="flex items-center w-fit group gap-2">
-                <i className="fa-brands fa-html5 text-white size-4 brightness-50 group-hover:brightness-125 transition duration-150"></i>
-                <span className="text-white text-sm brightness-50 tracking-[1.5px] group-hover:text-main group-hover:brightness-125 transition duration-200">
-                  HTML
-                </span>
-              </a>
+              {skills.map((skill, i) => (
+                <a
+                  key={i}
+                  href={skill.link}
+                  className="flex items-center w-fit group gap-2"
+                >
+                  {skill.icon.startsWith("fa") ? (
+                    <i
+                      className={`${skill.icon} text-white size-4 brightness-50 group-hover:brightness-125 transition duration-150`}
+                    ></i>
+                  ) : (
+                    <img
+                      src={skill.icon}
+                      className="size-4 grayscale p-0 brightness-50 group-hover:brightness-125 transition duration-200"
+                      alt={skill.label}
+                    />
+                  )}
 
-              {/* CSS */}
-              <a href="" className="flex items-center w-fit group gap-2">
-                <i className="fa-brands fa-css3 text-white size-4 brightness-50 group-hover:brightness-125 transition duration-150"></i>
-                <span className="text-white text-sm brightness-50 tracking-[1.5px] group-hover:text-main group-hover:brightness-125 transition duration-200">
-                  CSS
-                </span>
-              </a>
-
-              {/* <!-- SCSS --> */}
-              <a href="" className="flex items-center w-fit group gap-2">
-                <i className="fa-brands fa-sass text-white size-4 brightness-50 group-hover:brightness-125 transition duration-150"></i>
-                <span className="text-white text-sm brightness-50 tracking-[1.5px] group-hover:text-main group-hover:brightness-125 transition duration-200">
-                  SCSS
-                </span>
-              </a>
-
-              {/* JAVASCRIPT */}
-              <a href="" className="flex items-center w-fit group gap-2">
-                <i className="fa-brands fa-js text-white size-4 brightness-50 group-hover:brightness-125 transition duration-150"></i>
-                <span className="text-white text-sm brightness-50 tracking-[1.5px] group-hover:text-main group-hover:brightness-125 transition duration-200">
-                  Javascript
-                </span>
-              </a>
-
-              {/* <!-- BOOTSTRAP --> */}
-              <a href="" className="flex items-center w-fit group gap-2">
-                <i className="fa-brands fa-bootstrap text-white size-4 brightness-50 group-hover:brightness-125 transition duration-150"></i>
-
-                <span className="text-white text-sm brightness-50 tracking-[1.5px] group-hover:text-main group-hover:brightness-125 transition duration-200">
-                  Bootstrap
-                </span>
-              </a>
-
-              {/* <!-- TAILWIND --> */}
-              <a href="" className="flex items-center w-fit group gap-2">
-                <img
-                  src="/icons/icons8-tailwindcss-48.svg"
-                  className="size-4 grayscale p-0 brightness-50 group-hover:brightness-125 transition duration-200"
-                  alt=""
-                />
-                <span className="text-white text-sm brightness-50 tracking-[1.5px] group-hover:text-main group-hover:brightness-125 transition duration-200">
-                  TailwindCSS
-                </span>
-              </a>
-
-              {/* <!-- GITHUB --> */}
-              <a href="" className="flex items-center w-fit group gap-2">
-                <i className="fa-brands fa-github text-white size-4 brightness-50 group-hover:brightness-125 transition duration-200"></i>
-                <span className="text-white text-sm brightness-50 tracking-[1.5px] group-hover:text-main group-hover:brightness-125 transition duration-200">
-                  Github
-                </span>
-              </a>
-
-              {/* <!-- TypeScript --> */}
-              <a href="" className="flex items-center w-fit group gap-2">
-                <img
-                  src="/icons/icons8-typescript-48.svg"
-                  className="size-4 grayscale p-0 brightness-50 group-hover:brightness-125 transition duration-200"
-                  alt=""
-                />
-                <span className="text-white text-sm brightness-50 tracking-[1.5px] group-hover:text-main group-hover:brightness-125 transition duration-200">
-                  Typescript
-                </span>
-              </a>
+                  <span className="text-white text-sm brightness-50 tracking-[1.5px] group-hover:text-main group-hover:brightness-125 transition duration-200">
+                    {skill.label}
+                  </span>
+                </a>
+              ))}
             </div>
           </motion.div>
         </div>
