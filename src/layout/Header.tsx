@@ -47,9 +47,9 @@ const Header = () => {
         onClick={handleToggle}
         className="flex flex-col gap-1 md:hidden cursor-pointer z-50 "
       >
-        <span className="text-white w-9 rounded-2xl h-1 bg-[#be2600] "></span>
-        <span className="text-white w-9 rounded-2xl h-1 bg-[#be2600] "></span>
-        <span className="text-white w-9 rounded-2xl h-1 bg-[#be2600] "></span>
+        <span className="text-white w-9 rounded-2xl h-1 bg-main "></span>
+        <span className="text-white w-9 rounded-2xl h-1 bg-main "></span>
+        <span className="text-white w-9 rounded-2xl h-1 bg-main "></span>
       </div>
 
       {/* start nav */}
