@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import type { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 const Works: FC = () => {
+  const { t } = useTranslation();
   return (
     <motion.div
       className="bg-black-glass flex flex-col items-center justify-center p-8 animate-pulse w-full my-14"
@@ -10,7 +12,9 @@ const Works: FC = () => {
       transition={{ type: "spring", stiffness: 100, delay: 0 }}
     >
       <img src="/img/logo.webp" alt="" className="size-80 object-contain" />
-      <h1 className=" text-white text-4xl ">Coming Soon</h1>
+      <h1 className=" text-white text-4xl ">
+        {t("common:WORKpage.COMING_SOON")}
+      </h1>
     </motion.div>
   );
 };

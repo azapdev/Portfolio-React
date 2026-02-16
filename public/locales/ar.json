@@ -1,0 +1,23 @@
+{
+  "HEADER": {
+    "HOME": "الرئيسية",
+    "ABOUT": "من أنا",
+    "WORKS": "الأعمال"
+  },
+  "HOMEpage": {
+    "NAME": "احمـد العـزب",
+    "I_WAS": "أنا",
+    "FRONT_END": "مطور واجهات أمامية",
+    "WEB_DEVELOPER": "مطور ويب",
+    "RESUME": "السيرة الذاتية"
+  },
+  "ABOUTpage": {
+    "ABOUT_ME": "من أنا",
+    "DESCRIPTION": "أنا مهندس برمجيات لدي سنة خبرة في تطوير الواجهات الأمامية",
+    "SKILL": "المهارات",
+    "TECHNOLOGIES": "و التقنيات"
+  },
+  "WORKpage": {
+    "COMING_SOON": "قريباً"
+  }
+}

@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import type { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 const About: FC = () => {
+  const { t } = useTranslation();
   type Skill = {
     label: string;
     icon: string;
@@ -51,7 +53,7 @@ const About: FC = () => {
   ];
   return (
     <>
-      <div className="max-w-6xl grid grid-cols-1 lg:grid-cols-[70%_30%] gap-5 p-4 mx-auto bg-black-glass items-center justify-center h-full my-14">
+      <div className="max-w-6xl grid grid-cols-1 lg:grid-cols-[70%_30%] gap-5 p-4 mx-auto bg-black/80 items-center justify-center h-full my-14">
         {/* info */}
         <div className="flex items-start flex-col ms-8 gap-6 p-5">
           {/* ABOUT ME */}
@@ -63,11 +65,10 @@ const About: FC = () => {
           >
             <h1 className="text-main font-bold text-4xl md:text-6xl flex gap-3 items-baseline ">
               <span className=" text-white bg-white h-7 w-2 md:h-10 md:text-5xl rounded-3xl"></span>
-              About Me
+              {t("common:ABOUTpage.ABOUT_ME")}
             </h1>
             <p className="text-sec-title px-5 sm:px-9 py-4">
-              I'm a software engineer with 1 year of experience in Front-End
-              development
+              {t("common:ABOUTpage.DESCRIPTION")}
             </p>
           </motion.div>
 
@@ -80,9 +81,9 @@ const About: FC = () => {
             <h2 className="text-white font-bold text-2xl flex gap-2 items-baseline ">
               <span className=" text-white bg-white h-5 w-1 md:w-1 md:h-7  rounded-3xl"></span>
               <span className="text-main text-2xl md:text-3xl font-bold">
-                Skills
+                {t("common:ABOUTpage.SKILL")}
               </span>
-              & Technologies
+              {t("common:ABOUTpage.TECHNOLOGIES")}
             </h2>
             {/* tec */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8">

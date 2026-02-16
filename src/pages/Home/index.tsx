@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
-import type { FC } from "react";
+import { type FC } from "react";
+import { useTranslation } from "react-i18next";
+
 import { Link } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 
 const Home: FC = () => {
+  const { t } = useTranslation();
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[60%_45%] px-1 md:px-8 items-start justify-center h-full md:max-w-5xl md:items-center mx-auto my-14">
       {/* info */}
@@ -14,14 +17,17 @@ const Home: FC = () => {
         transition={{ type: "spring", stiffness: 100, duration: 1 }}
       >
         <h2 className="text-white font-bold text-3xl md:text-5xl lg:text-6xl">
-          &lt;Ahmed Elazap/&gt;
+          &lt;{t("common:HOMEpage.NAME")}/&gt;
         </h2>
         <div className="flex items-baseline gap-2 text-white font-bold text-lg md:text-3xl ms-8 uppercase whitespace-nowrap">
-          i Am
+          {t("common:HOMEpage.I_WAS")}
           <span className="text-main text-xl md:text-4xl">
             <Typewriter
               options={{
-                strings: ["web developer", "front end developer"],
+                strings: [
+                  t("common:HOMEpage.FRONT_END"),
+                  t("common:HOMEpage.WEB_DEVELOPER"),
+                ],
                 autoStart: true,
                 loop: true,
                 delay: 75,
@@ -35,7 +41,7 @@ const Home: FC = () => {
           to={"/about"}
           className="text-main border-main border-2 uppercase font-bold px-8 py-2 text-2xl rounded-3xl my-4 transition duration-150 tracking-wider hover:bg-main hover:text-white "
         >
-          Resume
+          {t("common:HOMEpage.RESUME")}
         </Link>
       </motion.div>
 

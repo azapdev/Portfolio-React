@@ -1,7 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { NavLink } from "react-router-dom";
+import "../i18n";
 import { ROUTES } from "../routes/routes";
 const Header = () => {
+  const { t, i18n } = useTranslation();
+  const lng = i18n.language;
+
   const [isShow, setIsShow] = useState(false);
   const handleToggle = () => {
     setIsShow(!isShow);
@@ -10,28 +15,31 @@ const Header = () => {
   const NavRoutes: { path: string; label: string }[] = [
     {
       path: ROUTES.HOME,
-      label: "home",
+      label: t("common:HEADER.HOME"),
     },
     {
       path: ROUTES.ABOUT,
-      label: "about",
+      label: t("common:HEADER.ABOUT"),
     },
     {
       path: ROUTES.WORKS,
-      label: "works",
+      label: t("common:HEADER.WORKS"),
     },
   ];
 
   return (
     <header className="sticky bg-black/60 backdrop-blur-md py-4 px-5 flex flex-row items-center justify-between top-0 max-w-6xl mx-auto z-40 md:px-8 md:py-0 w-full">
       {/* logo */}
-      <div className="cursor-pointer md:block">
+      <div className=" flex gap-3 flex-row justify-center items-center ">
         <img
           src="/img/logo.webp"
           alt=""
-          className="size-20 brightness-200 object-contain transition duration-500 hover:brightness-50"
+          className="size-20 brightness-200 object-contain transition duration-500 hover:brightness-50 cursor-pointer"
           loading="lazy"
         />
+        <button onClick={() => i18n.changeLanguage(lng === "en" ? "ar" : "en")}>
+          <i className="fa-solid fa-earth-africa cursor-pointer text-white text-2xl duration-200 hover:brightness-50"></i>
+        </button>
       </div>
 
       {/* toggel */}
@@ -50,9 +58,10 @@ const Header = () => {
       >
         {/* pages */}
         <ul className="gap-8 h-full flex flex-col items-center justify-center md:flex-row">
-          {NavRoutes.map(({ path, label }) => {
+          {NavRoutes.map(({ path, label }, index) => {
             return (
               <NavLink
+                key={index}
                 to={path}
                 className={({ isActive }) =>
                   `transition duration-150 uppercase hover:text-main ${
