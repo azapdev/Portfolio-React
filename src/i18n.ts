@@ -9,6 +9,7 @@ const resources = {
 };
 
 const Dlng = localStorage.getItem("lng") || "en";
+document.body.dir = Dlng === "en" ? "ltr" : "rtl";
 
 i18next.use(initReactI18next).init({
   resources,
