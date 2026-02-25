@@ -21,7 +21,7 @@ const About: FC = () => {
       link: "",
     },
     {
-      label: "SCSS",
+      label: "Sass",
       icon: "fa-brands fa-sass",
       link: "",
     },
@@ -30,6 +30,12 @@ const About: FC = () => {
       icon: "fa-brands fa-js",
       link: "",
     },
+    {
+      label: "React.js",
+      icon: "fa-brands fa-react",
+      link: "",
+    },
+
     {
       label: "Bootstrap",
       icon: "fa-brands fa-bootstrap",
@@ -48,6 +54,11 @@ const About: FC = () => {
     {
       label: "Typescript",
       icon: "/icons/icons8-typescript-48.svg",
+      link: "",
+    },
+    {
+      label: "Figma",
+      icon: "fa-brands fa-figma",
       link: "",
     },
   ];

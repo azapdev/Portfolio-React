@@ -54,7 +54,7 @@ const Header = () => {
 
       {/* start nav */}
       <nav
-        className={`${isShow ? "block text-white absolute right-0 top-0 h-screen w-40 bg-black/70 " : "hidden"} md:block md:static md:h-auto md:w-auto md:bg-transparent`}
+        className={`${isShow ? " absolute right-0 top-0 h-screen w-40 bg-black/70 " : "hidden"} md:block md:static md:h-auto md:w-auto md:bg-transparent`}
       >
         {/* pages */}
         <ul className="gap-8 h-full flex flex-col items-center justify-center md:flex-row">
