@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { type FC } from "react";
+import { useEffect, type FC } from "react";
 import { useTranslation } from "react-i18next";
 
 import { Link } from "react-router-dom";
@@ -7,6 +7,9 @@ import Typewriter from "typewriter-effect";
 
 const Home: FC = () => {
   const { t } = useTranslation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[60%_45%] px-1 md:px-8 items-start justify-center h-full md:max-w-5xl md:items-center mx-auto my-14">
       {/* info */}

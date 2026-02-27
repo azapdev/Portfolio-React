@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
-import type { FC } from "react";
+import { useEffect, type FC } from "react";
 import { useTranslation } from "react-i18next";
 
 const About: FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   const { t } = useTranslation();
   type Skill = {
     label: string;

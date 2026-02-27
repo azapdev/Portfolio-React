@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
-import type { FC } from "react";
+import { useEffect, type FC } from "react";
 import { useTranslation } from "react-i18next";
 
 const Works: FC = () => {
   const { t } = useTranslation();
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    });
   return (
     <motion.div
       className="bg-black-glass flex flex-col items-center justify-center p-8 animate-pulse w-full my-14"
