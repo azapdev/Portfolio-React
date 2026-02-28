@@ -1,6 +1,6 @@
 const Preloader = () => {
   return (
-    <div className="h-screen w-full flex justify-center items-center bg-black ">
+    <div className="flex h-screen w-full items-center justify-center bg-black">
       <img
         src="/img/logo.webp"
         alt=""

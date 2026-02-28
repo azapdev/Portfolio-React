@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @theme {
   --color-main: #be2600;
   --color-black-glass: #0000008e;
@@ -16,7 +16,7 @@
   }
 
   body {
-    background-image: url("/img/bg2.jpg");
-    @apply min-h-screen bg-cover bg-center bg-no-repeat bg-fixed;
+    background-image: url('/img/bg2.jpg');
+    @apply min-h-screen bg-cover bg-fixed bg-center bg-no-repeat;
   }
 }

@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { useTranslation } from "react-i18next";
-import { NavLink } from "react-router-dom";
-import "../i18n";
-import { ROUTES } from "../routes/routes";
+import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { NavLink } from 'react-router-dom';
+import '../i18n';
+import { ROUTES } from '../routes/routes';
 const Header = () => {
   const { t, i18n } = useTranslation();
   const lng = i18n.language;
@@ -16,60 +16,60 @@ const Header = () => {
   const NavRoutes: { path: string; label: string }[] = [
     {
       path: ROUTES.HOME,
-      label: t("common:HEADER.HOME"),
+      label: t('common:HEADER.HOME'),
     },
     {
       path: ROUTES.ABOUT,
-      label: t("common:HEADER.ABOUT"),
+      label: t('common:HEADER.ABOUT'),
     },
     {
       path: ROUTES.WORKS,
-      label: t("common:HEADER.WORKS"),
+      label: t('common:HEADER.WORKS'),
     },
   ];
 
   return (
     <>
-      <header className="sticky bg-black/60 backdrop-blur-md py-4 px-5 flex flex-row items-center justify-between top-0 max-w-6xl mx-auto z-40 md:px-8 md:py-0 w-full">
+      <header className="sticky top-0 z-40 mx-auto flex w-full max-w-6xl flex-row items-center justify-between bg-black/60 px-5 py-4 backdrop-blur-md md:px-8 md:py-0">
         {/* logo */}
-        <div className=" flex gap-3 flex-row justify-center items-center ">
+        <div className="flex flex-row items-center justify-center gap-3">
           <img
             src="/img/logo.webp"
             alt=""
-            className="size-20 brightness-200 object-contain transition duration-500 hover:brightness-50 cursor-pointer"
+            className="size-20 cursor-pointer object-contain brightness-200 transition duration-500 hover:brightness-50"
             loading="lazy"
           />
           <button
-            onClick={() => i18n.changeLanguage(lng === "en" ? "ar" : "en")}
+            onClick={() => i18n.changeLanguage(lng === 'en' ? 'ar' : 'en')}
           >
-            <i className="fa-solid fa-earth-africa cursor-pointer text-white text-2xl duration-200 hover:brightness-50"></i>
+            <i className="fa-solid fa-earth-africa cursor-pointer text-2xl text-white duration-200 hover:brightness-50"></i>
           </button>
         </div>
 
         {/* toggel */}
         <div
           onClick={handleToggle}
-          className="flex flex-col gap-1 md:hidden cursor-pointer z-50 "
+          className="z-50 flex cursor-pointer flex-col gap-1 md:hidden"
         >
-          <span className="text-white w-9 rounded-2xl h-1 bg-main "></span>
-          <span className="text-white w-9 rounded-2xl h-1 bg-main "></span>
-          <span className="text-white w-9 rounded-2xl h-1 bg-main "></span>
+          <span className="bg-main h-1 w-9 rounded-2xl text-white"></span>
+          <span className="bg-main h-1 w-9 rounded-2xl text-white"></span>
+          <span className="bg-main h-1 w-9 rounded-2xl text-white"></span>
         </div>
 
         {/* DEsktop nav */}
         <nav
-          className={` bg-black/70 md:block hidden md:static md:h-auto md:w-auto md:bg-transparent`}
+          className={`hidden bg-black/70 md:static md:block md:h-auto md:w-auto md:bg-transparent`}
         >
           {/* pages */}
-          <ul className="gap-8 h-full flex  items-center justify-center md:flex-row">
+          <ul className="flex h-full items-center justify-center gap-8 md:flex-row">
             {NavRoutes.map(({ path, label }, index) => {
               return (
                 <NavLink
                   key={index}
                   to={path}
                   className={({ isActive }) =>
-                    `transition duration-150 uppercase hover:text-main ${
-                      isActive ? "text-main font-bold" : " text-white"
+                    `hover:text-main uppercase transition duration-150 ${
+                      isActive ? 'text-main font-bold' : 'text-white'
                     }`
                   }
                   onClick={() => setIsShow(false)}
@@ -85,20 +85,20 @@ const Header = () => {
       <motion.nav
         initial={{ x: 200 }}
         animate={{ x: isShow ? 0 : 200 }}
-        transition={{ type: "spring", stiffness: 200, damping: 25 }}
-        className={`fixed right-0 top-0 h-screen w-40 bg-black/70 z-30 ${
-          isShow ? "block" : "hidden"
+        transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+        className={`fixed top-0 right-0 z-30 h-screen w-40 bg-black/70 ${
+          isShow ? 'block' : 'hidden'
         } md:hidden`}
       >
-        <ul className="gap-8 h-full flex flex-col items-center justify-center">
+        <ul className="flex h-full flex-col items-center justify-center gap-8">
           {NavRoutes.map(({ path, label }, index) => {
             return (
               <NavLink
                 key={index}
                 to={path}
                 className={({ isActive }) =>
-                  `transition duration-150 uppercase hover:text-main ${
-                    isActive ? "text-main font-bold" : " text-white"
+                  `hover:text-main uppercase transition duration-150 ${
+                    isActive ? 'text-main font-bold' : 'text-white'
                   }`
                 }
                 onClick={() => setIsShow(false)}
@@ -111,7 +111,7 @@ const Header = () => {
       </motion.nav>
       {/* BlurPAge */}
       <div
-        className={`w-full h-screen fixed inset-0 top-0 backdrop-blur-2xl z-20 ${isShow ? "block" : "hidden"}`}
+        className={`fixed inset-0 top-0 z-20 h-screen w-full backdrop-blur-2xl ${isShow ? 'block' : 'hidden'}`}
         onClick={() => setIsShow((prev) => !prev)}
       ></div>
     </>
