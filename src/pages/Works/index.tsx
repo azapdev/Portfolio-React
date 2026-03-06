@@ -35,8 +35,8 @@ const Works: FC = () => {
           {/* WEBSITEs */}
           {WebSites.map(({ link, img, label }, index) => (
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{
                 duration: 0.6,
