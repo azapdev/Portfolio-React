@@ -67,7 +67,7 @@ const About: FC = () => {
   ];
   return (
     <>
-      <div className="mx-auto my-14 grid h-full max-w-6xl grid-cols-1 items-center justify-center gap-5 bg-black/80 p-4 lg:grid-cols-[70%_30%]">
+      <div className="mx-auto my-14 grid h-full max-w-6xl grid-cols-1 items-center justify-center gap-5 overflow-hidden bg-black/80 p-4 lg:grid-cols-[70%_30%]">
         {/* info */}
         <div className="ms-8 flex flex-col items-start gap-6 p-5">
           {/* ABOUT ME */}

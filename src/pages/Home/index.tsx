@@ -11,7 +11,7 @@ const Home: FC = () => {
     window.scrollTo(0, 0);
   });
   return (
-    <div className="mx-auto my-14 grid h-full grid-cols-1 items-start justify-center px-1 md:max-w-5xl md:items-center md:px-8 lg:grid-cols-[60%_45%]">
+    <div className="mx-auto my-14 grid h-full grid-cols-1 items-start justify-center overflow-hidden px-1 md:max-w-5xl md:items-center md:px-8 lg:grid-cols-[60%_45%]">
       {/* info */}
       <motion.div
         className="bg-black-glass flex max-w-xl flex-col items-start gap-3 rounded-xl p-6 shadow-xl md:px-8"

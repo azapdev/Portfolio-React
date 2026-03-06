@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { NavLink } from 'react-router-dom';
@@ -82,33 +82,36 @@ const Header = () => {
         </nav>
       </header>
       {/* Mobile nav  */}
-      <motion.nav
-        initial={{ x: 200 }}
-        animate={{ x: isShow ? 0 : 200 }}
-        transition={{ type: 'spring', stiffness: 200, damping: 25 }}
-        className={`fixed top-0 right-0 z-30 h-screen w-40 bg-black/70 ${
-          isShow ? 'block' : 'hidden'
-        } md:hidden`}
-      >
-        <ul className="flex h-full flex-col items-center justify-center gap-8">
-          {NavRoutes.map(({ path, label }, index) => {
-            return (
-              <NavLink
-                key={index}
-                to={path}
-                className={({ isActive }) =>
-                  `hover:text-main uppercase transition duration-150 ${
-                    isActive ? 'text-main font-bold' : 'text-white'
-                  }`
-                }
-                onClick={() => setIsShow(false)}
-              >
-                {label}
-              </NavLink>
-            );
-          })}
-        </ul>
-      </motion.nav>
+      <AnimatePresence>
+        {isShow && (
+          <motion.nav
+            initial={{ x: 200 }}
+            animate={{ x: 0 }}
+            exit={{ x: 200 }}
+            transition={{ type: 'spring', stiffness: 200, damping: 25 }}
+            className="fixed top-0 right-0 z-30 h-screen w-40 bg-black/70 md:hidden"
+          >
+            <ul className="flex h-full flex-col items-center justify-center gap-8">
+              {NavRoutes.map(({ path, label }, index) => {
+                return (
+                  <NavLink
+                    key={index}
+                    to={path}
+                    className={({ isActive }) =>
+                      `hover:text-main uppercase transition duration-150 ${
+                        isActive ? 'text-main font-bold' : 'text-white'
+                      }`
+                    }
+                    onClick={() => setIsShow(false)}
+                  >
+                    {label}
+                  </NavLink>
+                );
+              })}
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
       {/* BlurPAge */}
       <div
         className={`fixed inset-0 top-0 z-20 h-screen w-full backdrop-blur-2xl ${isShow ? 'block' : 'hidden'}`}

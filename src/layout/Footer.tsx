@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
-    <div className="bg-footer-bg bottom-0 order-last flex h-35 w-full flex-col items-center">
+    <footer className="bg-footer-bg bottom-0 order-last flex  w-full flex-col items-center justify-center">
       <Link to={'/'}>
         <img
           src="/img/logo.webp"
@@ -11,7 +11,7 @@ const Footer = () => {
         />
       </Link>
       {/* LINKES */}
-      <div className="flex justify-center gap-3">
+      <div className="flex justify-center gap-3 py-4">
         {/* <!-- instagram --> */}
         <a href="https://www.instagram.com/azapdev/" target="_blank">
           <span className="hover:text-danger bg-icon-bg flex h-10 w-10 items-center justify-center rounded-full text-xl text-white brightness-50 transition duration-150 hover:bg-black hover:brightness-100">
@@ -51,7 +51,7 @@ const Footer = () => {
           </span>
         </a>
       </div>
-    </div>
+    </footer>
   );
 };
 
