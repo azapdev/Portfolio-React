@@ -64,6 +64,11 @@ const About: FC = () => {
       icon: 'fa-brands fa-figma',
       link: '',
     },
+    {
+      label: 'Next.js',
+      icon: '/icons/icon-next.js.svg',
+      link: '',
+    },
   ];
   return (
     <>
@@ -114,7 +119,7 @@ const About: FC = () => {
                   ) : (
                     <img
                       src={skill.icon}
-                      className="size-4 p-0 brightness-50 grayscale transition duration-200 group-hover:brightness-125"
+                      className="size-4 p-0 brightness-50 grayscale invert-25 transition duration-200 group-hover:brightness-125"
                       alt={skill.label}
                     />
                   )}
