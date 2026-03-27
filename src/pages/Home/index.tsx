@@ -23,7 +23,7 @@ const Home: FC = () => {
           &lt;{t('common:HOMEpage.NAME')}/&gt;
         </h2>
 
-        <div className="ms-8 flex items-baseline gap-2 text-lg font-bold whitespace-nowrap text-white uppercase md:text-3xl">
+        <div className=" flex items-baseline gap-2 text-lg font-bold whitespace-nowrap text-white uppercase md:ms-8 md:text-3xl">
           {t('common:HOMEpage.I_WAS')}
           <span className="text-main text-xl md:text-4xl">
             <Typewriter
@@ -45,13 +45,13 @@ const Home: FC = () => {
         <div className="my-4">
           <Link
             to={'/about'}
-            className="text-main border-main hover:bg-main rounded-3xl border-2 px-8 py-2 text-2xl font-bold tracking-wider uppercase transition duration-150 hover:text-white"
+            className="text-main border-main hover:bg-main rounded-3xl border-2 px-8 py-2 text-lg font-bold tracking-wider uppercase transition duration-150 hover:text-white md:text-2xl"
           >
             {t('common:HOMEpage.RESUME')}
           </Link>
           <a
             href={'CV/Ahmed Elazap - Frontend Developer.pdf'}
-            className="border-main bg-main hover:text-main mx-2 rounded-3xl border-2 px-6 py-1 text-xl font-bold tracking-wider text-white uppercase transition duration-150 hover:bg-transparent"
+            className="border-main bg-main hover:text-main mx-2 rounded-3xl border-2 px-6 py-1 text-sm font-bold tracking-wider text-white uppercase transition duration-150 hover:bg-transparent md:text-xl"
           >
             Cv
           </a>

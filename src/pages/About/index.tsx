@@ -101,7 +101,7 @@ const About: FC = () => {
     <>
       <div className="mx-auto my-14 grid h-full max-w-6xl grid-cols-1 items-center justify-center gap-5 overflow-hidden bg-black/80 p-4 lg:grid-cols-[70%_30%]">
         {/* info */}
-        <div className="ms-8 flex flex-col items-start gap-6 p-5">
+        <div className="flex flex-col items-start gap-6 md:ms-8 md:p-5">
           {/* ABOUT ME */}
           <motion.div
             className=""
@@ -132,7 +132,7 @@ const About: FC = () => {
               {t('common:ABOUTpage.TECHNOLOGIES')}
             </h2>
             {/* tec */}
-            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            <div className="xsm:grid-cols-3 mt-8 grid grid-cols-2 gap-3 md:grid-cols-4">
               {skills.map((skill, i) => (
                 <a
                   key={i}
