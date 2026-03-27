@@ -22,6 +22,7 @@ const Home: FC = () => {
         <h2 className="text-3xl font-bold text-white md:text-5xl lg:text-6xl">
           &lt;{t('common:HOMEpage.NAME')}/&gt;
         </h2>
+
         <div className="ms-8 flex items-baseline gap-2 text-lg font-bold whitespace-nowrap text-white uppercase md:text-3xl">
           {t('common:HOMEpage.I_WAS')}
           <span className="text-main text-xl md:text-4xl">
@@ -40,12 +41,21 @@ const Home: FC = () => {
             />
           </span>
         </div>
-        <Link
-          to={'/about'}
-          className="text-main border-main hover:bg-main my-4 rounded-3xl border-2 px-8 py-2 text-2xl font-bold tracking-wider uppercase transition duration-150 hover:text-white"
-        >
-          {t('common:HOMEpage.RESUME')}
-        </Link>
+
+        <div className="my-4">
+          <Link
+            to={'/about'}
+            className="text-main border-main hover:bg-main rounded-3xl border-2 px-8 py-2 text-2xl font-bold tracking-wider uppercase transition duration-150 hover:text-white"
+          >
+            {t('common:HOMEpage.RESUME')}
+          </Link>
+          <a
+            href={'CV/Ahmed Elazap - Frontend Developer.pdf'}
+            className="border-main bg-main hover:text-main mx-2 rounded-3xl border-2 px-6 py-1 text-xl font-bold tracking-wider text-white uppercase transition duration-150 hover:bg-transparent"
+          >
+            Cv
+          </a>
+        </div>
       </motion.div>
 
       {/* logo */}

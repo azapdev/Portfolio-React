@@ -35,6 +35,11 @@ const About: FC = () => {
       link: '',
     },
     {
+      label: 'Python',
+      icon: 'codicon:python',
+      link: '',
+    },
+    {
       label: 'React.js',
       icon: 'teenyicons:react-outline',
       link: '',
@@ -61,13 +66,19 @@ const About: FC = () => {
       link: '',
     },
     {
-      label: 'Figma',
-      icon: 'akar-icons:figma-fill',
+      label: 'React Query',
+      icon: 'simple-icons:reactquery',
       link: '',
     },
+
     {
       label: 'Next.js',
       icon: 'teenyicons:nextjs-solid',
+      link: '',
+    },
+    {
+      label: 'Vite.js',
+      icon: 'file-icons:vite',
       link: '',
     },
     {
@@ -78,6 +89,11 @@ const About: FC = () => {
     {
       label: 'Zustand',
       icon: 'devicon:zustand',
+      link: '',
+    },
+    {
+      label: 'Figma',
+      icon: 'akar-icons:figma-fill',
       link: '',
     },
   ];
