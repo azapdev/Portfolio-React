@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import { useEffect, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -15,58 +16,68 @@ const About: FC = () => {
   const skills: Skill[] = [
     {
       label: 'HTML',
-      icon: 'fa-brands fa-html5',
+      icon: 'akar-icons:html-fill',
       link: '',
     },
     {
       label: 'CSS',
-      icon: 'fa-brands fa-css3',
+      icon: 'fa6-brands:css3-alt',
       link: '',
     },
     {
       label: 'Sass',
-      icon: 'fa-brands fa-sass',
+      icon: 'vscode-icons:file-type-scss',
       link: '',
     },
     {
       label: 'Javascript',
-      icon: 'fa-brands fa-js',
+      icon: 'cib:javascript',
       link: '',
     },
     {
       label: 'React.js',
-      icon: 'fa-brands fa-react',
+      icon: 'teenyicons:react-outline',
       link: '',
     },
 
     {
       label: 'Bootstrap',
-      icon: 'fa-brands fa-bootstrap',
+      icon: 'fa-brands:bootstrap',
       link: '',
     },
     {
       label: 'TailwindCSS',
-      icon: '/icons/icons8-tailwindcss-48.svg',
+      icon: 'fa7-brands:tailwind-css',
       link: '',
     },
     {
       label: 'Github',
-      icon: 'fa-brands fa-github',
+      icon: 'mage:github',
       link: '',
     },
     {
       label: 'Typescript',
-      icon: '/icons/icons8-typescript-48.svg',
+      icon: 'simple-icons:typescript',
       link: '',
     },
     {
       label: 'Figma',
-      icon: 'fa-brands fa-figma',
+      icon: 'akar-icons:figma-fill',
       link: '',
     },
     {
       label: 'Next.js',
-      icon: '/icons/icon-next.js.svg',
+      icon: 'teenyicons:nextjs-solid',
+      link: '',
+    },
+    {
+      label: 'Redux',
+      icon: 'fontisto:redux',
+      link: '',
+    },
+    {
+      label: 'Zustand',
+      icon: 'devicon:zustand',
       link: '',
     },
   ];
@@ -105,24 +116,17 @@ const About: FC = () => {
               {t('common:ABOUTpage.TECHNOLOGIES')}
             </h2>
             {/* tec */}
-            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
               {skills.map((skill, i) => (
                 <a
                   key={i}
                   href={skill.link}
                   className="group flex w-fit items-center gap-2"
                 >
-                  {skill.icon.startsWith('fa') ? (
-                    <i
-                      className={`${skill.icon} size-4 text-white brightness-50 transition duration-150 group-hover:brightness-125`}
-                    ></i>
-                  ) : (
-                    <img
-                      src={skill.icon}
-                      className="size-4 p-0 brightness-50 grayscale invert-25 transition duration-200 group-hover:brightness-125"
-                      alt={skill.label}
-                    />
-                  )}
+                  <Icon
+                    icon={skill.icon}
+                    className="text-gray-300 opacity-50 grayscale-100 group-hover:opacity-100"
+                  />
 
                   <span className="group-hover:text-main text-sm tracking-[1.5px] text-white brightness-50 transition duration-200 group-hover:brightness-125">
                     {skill.label}
