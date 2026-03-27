@@ -132,7 +132,7 @@ const About: FC = () => {
               {t('common:ABOUTpage.TECHNOLOGIES')}
             </h2>
             {/* tec */}
-            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
+            <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {skills.map((skill, i) => (
                 <a
                   key={i}
