@@ -23,7 +23,7 @@ const Home: FC = () => {
           &lt;{t('common:HOMEpage.NAME')}/&gt;
         </h2>
 
-        <div className=" flex items-baseline gap-2 text-lg font-bold whitespace-nowrap text-white uppercase md:ms-8 md:text-3xl">
+        <div className="flex items-baseline gap-2 text-lg font-bold whitespace-nowrap text-white uppercase md:ms-8 md:text-3xl">
           {t('common:HOMEpage.I_WAS')}
           <span className="text-main text-xl md:text-4xl">
             <Typewriter
@@ -64,6 +64,7 @@ const Home: FC = () => {
         alt=""
         className="order-first mx-auto animate-bounce object-contain lg:order-last"
         loading="lazy"
+        fetchPriority="high"
         initial={{ x: -50, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ type: 'spring', stiffness: 100, duration: 1 }}

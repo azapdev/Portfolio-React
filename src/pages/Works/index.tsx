@@ -54,6 +54,7 @@ const Works: FC = () => {
               <Card className="group relative mx-auto max-w-80 border border-gray-300 bg-transparent pt-0">
                 <div className="object-cover p-4">
                   <img
+                  loading='lazy'
                     src={img}
                     alt="Event cover"
                     className="relative aspect-video rounded-2xl object-cover brightness-60 transition duration-300 group-hover:scale-105 group-hover:brightness-100"

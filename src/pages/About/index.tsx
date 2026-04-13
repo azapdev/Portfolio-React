@@ -165,6 +165,7 @@ const About: FC = () => {
             alt=""
             className="flex w-50 justify-center rounded-2xl"
             loading="lazy"
+            fetchPriority="high"
           />
         </motion.div>
       </div>
