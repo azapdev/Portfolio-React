@@ -23,6 +23,11 @@ const Works: FC = () => {
       img: '/img/works/klh.jpg',
       label: t('common:WORKpage.PARAGRAPH2'),
     },
+    {
+      link: 'https://themightyspiceco.azapdev.workers.dev/',
+      img: '/img/works/themightyspiceco.webp',
+      label: t('common:WORKpage.PARAGRAPH3'),
+    },
   ];
   useEffect(() => {
     window.scrollTo(0, 0);
