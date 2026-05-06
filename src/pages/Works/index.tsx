@@ -33,7 +33,7 @@ const Works: FC = () => {
   return (
     <>
       <section className="my-14 w-full overflow-hidden p-4">
-        <div className="my-12 flex flex-col flex-wrap items-start justify-between gap-2 py-18 md:mx-8 md:px-8">
+        <div className="my-12 grid grid-cols-1 gap-8 py-18 md:mx-8 md:grid-cols-2 md:px-8">
           {/* WEBSITEs */}
           {WebSites.map(({ link, img, label }, index) => (
             <motion.div
@@ -46,17 +46,17 @@ const Works: FC = () => {
                 delay: index * 0.15,
                 ease: 'easeOut',
               }}
-              className="border-main my-6 flex w-full flex-col items-start justify-between gap-8 rounded-2xl border-s-4 bg-black p-4 px-4 py-6 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-105 hover:shadow-2xl"
+              className="border-main flex h-full flex-col justify-between gap-8 rounded-2xl border-s-4 bg-black p-6 shadow-lg backdrop-blur-md transition-all duration-300 hover:scale-105 hover:shadow-2xl"
             >
-              {/* Left Side (Image + Text) */}
-              <div className="flex flex-col items-center gap-8 md:flex-row md:gap-8">
+              {/* Content */}
+              <div className="flex flex-col flex-wrap items-center gap-8 md:flex-row">
                 <img
                   src={img}
                   alt={label}
-                  className="h-fit w-80 rounded-2xl object-contain"
+                  className=" rounded-2xl object-contain"
                 />
 
-                <p className="line-clamp-3 text-center text-sm text-gray-200 md:text-lg">
+                <p className="md:line-clamp-2 line-clamp-3 text-start text-sm text-gray-200 md:text-lg">
                   {label}
                 </p>
               </div>
@@ -66,7 +66,7 @@ const Works: FC = () => {
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-main hover:text-main border-main w-full rounded-xl border py-2 text-center font-bold text-white transition duration-200 hover:bg-transparent md:w-70"
+                className="border-main bg-main hover:text-main mt-auto w-full rounded-xl border py-2 text-center font-bold text-white transition duration-200 hover:bg-transparent md:w-60"
               >
                 Visit Website
               </a>
