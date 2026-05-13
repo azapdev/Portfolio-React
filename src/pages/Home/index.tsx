@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import { useEffect, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import ParticlesComponent from '@/assets/AnimatedBG';
+import { ROUTES } from '@/routes/routes';
+import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import About from './About';
 
@@ -12,21 +15,25 @@ const Home: FC = () => {
   });
   return (
     <section>
-      <div className="mx-auto my-14 grid grid-cols-1 items-start justify-center overflow-hidden px-1 md:max-w-5xl md:items-center md:px-8 lg:h-screen lg:grid-cols-[60%_45%]">
+      <div className="absolute inset-0 -z-10">
+        <ParticlesComponent />
+      </div>
+
+      <div className="mx-auto flex min-h-screen items-center overflow-hidden px-4 md:max-w-7xl md:px-8">
         {/* info */}
         <motion.div
-          className="bg-black-glass flex max-w-xl flex-col items-start gap-3 rounded-xl p-6 shadow-xl md:px-8"
+          className="bg-black-glass flex flex-col items-start gap-4 rounded-xl p-6 shadow-xl md:px-8"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ type: 'spring', stiffness: 100, duration: 1 }}
         >
-          <h2 className="text-3xl font-bold text-white md:text-5xl lg:text-6xl">
+          <h2 className="mb-4 text-3xl font-bold text-white md:text-6xl lg:text-7xl">
             &lt;{t('common:HOMEpage.NAME')}/&gt;
           </h2>
 
-          <div className="flex items-baseline gap-2 text-lg font-bold whitespace-nowrap text-white uppercase md:ms-8 md:text-3xl">
+          <div className="flex items-center gap-2 text-lg font-bold whitespace-nowrap text-white uppercase md:text-3xl">
             {t('common:HOMEpage.I_WAS')}
-            <span className="text-main text-xl md:text-4xl">
+            <span className="text-main animate-pulse text-xl drop-shadow-[0_0_15px_main] md:text-4xl">
               <Typewriter
                 options={{
                   strings: [
@@ -43,36 +50,29 @@ const Home: FC = () => {
             </span>
           </div>
 
+          <p className="max-w-lg leading-7 text-white/50">
+            Welcome to my digital world where lines of code meet the art of
+            design. Together, let's craft remarkable and high-performance
+            digital experiences. (Ahmed Elazap)
+          </p>
+
           <div className="my-4">
+            <Link
+              to={ROUTES.WORKS}
+              className="border-main bg-main hover:text-main rounded-full border-2 px-6 py-4 text-lg font-light text-black transition duration-150 hover:bg-transparent"
+            >
+              {t('common:HOMEpage.EXPLORE_WORKS')}
+            </Link>
             <a
               href={'#about'}
-              className="text-main border-main hover:bg-main rounded-3xl border-2 px-8 py-2 text-lg font-bold tracking-wider uppercase transition duration-150 hover:text-white md:text-2xl"
+              className="border-main text-main hover:bg-main mx-4 rounded-full border-2 bg-transparent px-6 py-4 transition duration-150 hover:text-black"
             >
-              {t('common:HOMEpage.RESUME')}
-            </a>
-            <a
-              href={'CV/Ahmed Elazap - Frontend Developer.pdf'}
-              className="border-main bg-main hover:text-main mx-2 rounded-3xl border-2 px-6 py-1 text-sm font-bold tracking-wider text-white uppercase transition duration-150 hover:bg-transparent md:text-xl"
-            >
-              Cv
+              {t('common:HOMEpage.VIEW_RESUME')}
             </a>
           </div>
         </motion.div>
-
-        {/* logo */}
-        <motion.img
-          src="/img/logo.webp"
-          alt=""
-          className="order-first mx-auto h-auto w-90 animate-bounce object-contain  md:w-xl lg:order-last"
-          loading="lazy"
-          fetchPriority="high"
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ type: 'spring', stiffness: 100, duration: 1 }}
-          viewport={{ once: true }}
-        />
       </div>
-      {/* Aboute */}
+      {/* About */}
       <About />
     </section>
   );

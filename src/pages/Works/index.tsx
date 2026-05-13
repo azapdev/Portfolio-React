@@ -1,3 +1,4 @@
+import ParticlesComponent from '@/assets/AnimatedBG';
 import type { Websites } from '@/types';
 import { motion } from 'framer-motion';
 import { useEffect, type FC } from 'react';
@@ -33,6 +34,7 @@ const Works: FC = () => {
   return (
     <>
       <section className="my-14 w-full overflow-hidden p-4">
+        <ParticlesComponent />
         <div className="my-12 grid grid-cols-1 gap-8 py-18 md:mx-8 md:grid-cols-2 md:px-8">
           {/* WEBSITEs */}
           {WebSites.map(({ link, img, label }, index) => (
@@ -53,10 +55,10 @@ const Works: FC = () => {
                 <img
                   src={img}
                   alt={label}
-                  className=" rounded-2xl object-contain"
+                  className="rounded-2xl object-contain"
                 />
 
-                <p className="md:line-clamp-2 line-clamp-3 text-start text-sm text-gray-200 md:text-lg">
+                <p className="line-clamp-3 text-start text-sm text-gray-200 md:line-clamp-2 md:text-lg">
                   {label}
                 </p>
               </div>
@@ -68,7 +70,7 @@ const Works: FC = () => {
                 rel="noopener noreferrer"
                 className="border-main bg-main hover:text-main mt-auto w-full rounded-xl border py-2 text-center font-bold text-white transition duration-200 hover:bg-transparent md:w-60"
               >
-                Visit Website
+                {t('common:WORKpage.BUTTON_LABEL')}
               </a>
             </motion.div>
           ))}

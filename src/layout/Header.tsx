@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -79,33 +80,52 @@ const Header = () => {
         </nav>
       </header>
       {/* Mobile nav  */}
+      {/* OVERLAY */}
       <AnimatePresence>
         {isShow && (
           <motion.nav
-            initial={{ x: 200 }}
-            animate={{ x: 0 }}
-            exit={{ x: 200 }}
-            transition={{ type: 'spring', stiffness: 200, damping: 25 }}
-            className="fixed top-0 right-0 z-30 h-screen w-40 bg-black/70 md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-start bg-black px-20 text-2xl"
           >
-            <ul className="flex h-full flex-col items-center justify-center gap-8">
-              {NavRoutes.map(({ path, label }, index) => {
-                return (
-                  <NavLink
-                    key={index}
-                    to={path}
-                    className={({ isActive }) =>
-                      `hover:text-main uppercase transition duration-150 ${
-                        isActive ? 'text-main font-bold' : 'text-white'
-                      }`
-                    }
-                    onClick={() => setIsShow(false)}
-                  >
-                    {label}
-                  </NavLink>
-                );
-              })}
-            </ul>
+            {/* LINKS */}
+            <motion.div
+              initial={{ x: -60, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: -60, opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="flex flex-col items-start gap-8 bg-black"
+            >
+              {NavRoutes.map((link) => (
+                <NavLink
+                  key={link.path}
+                  to={link.path}
+                  onClick={handleToggle}
+                  className={({ isActive }) =>
+                    `group flex items-center text-2xl font-bold transition-all duration-300 md:text-4xl ${
+                      isActive ? 'text-main' : 'text-white'
+                    }`
+                  }
+                >
+                  <span className="me-4 h-0 w-0 rounded-full bg-white transition-all duration-300 group-hover:h-4 group-hover:w-4"></span>
+                  {link.label}
+                </NavLink>
+              ))}
+            </motion.div>
+
+            {/* CLOSE */}
+            <button
+              onClick={handleToggle}
+              className="absolute top-7 right-4 cursor-pointer text-white md:right-12"
+              aria-label="Close menu"
+            >
+              <Icon
+                icon="line-md:menu-to-close-transition"
+                width="45"
+                height="45"
+              />
+            </button>
           </motion.nav>
         )}
       </AnimatePresence>
