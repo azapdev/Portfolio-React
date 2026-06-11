@@ -9,22 +9,22 @@ const Works: FC = () => {
   const WebSites: Websites[] = [
     {
       link: 'https://lepicurieux.azapdev.workers.dev/',
-      img: '/img/works/website.jpg',
+      img: '/img/works/website.webp',
       label: t('common:WORKpage.PARAGRAPH1'),
-    },
-    {
-      link: 'https://kllh.azapdev.workers.dev/',
-      img: '/img/works/klh.jpg',
-      label: t('common:WORKpage.PARAGRAPH2'),
     },
     {
       link: 'https://themightyspiceco.azapdev.workers.dev/',
       img: '/img/works/themightyspiceco.webp',
-      label: t('common:WORKpage.PARAGRAPH3'),
+      label: t('common:WORKpage.PARAGRAPH2'),
     },
     {
       link: 'https://porty.azapdev.workers.dev/',
       img: '/img/works/porty.webp',
+      label: t('common:WORKpage.PARAGRAPH3'),
+    },
+    {
+      link: 'https://ashely.azapdev.workers.dev/',
+      img: '/img/works/ashely.webp',
       label: t('common:WORKpage.PARAGRAPH4'),
     },
   ];
