@@ -27,6 +27,11 @@ const Works: FC = () => {
       img: '/img/works/ashely.webp',
       label: t('common:WORKpage.PARAGRAPH4'),
     },
+    {
+      link: 'https://pulsefit.azapdev.workers.dev/',
+      img: '/img/works/plusfit.webp',
+      label: t('common:WORKpage.PARAGRAPH5'),
+    },
   ];
   useEffect(() => {
     window.scrollTo(0, 0);
