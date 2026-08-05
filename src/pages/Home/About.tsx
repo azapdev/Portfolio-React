@@ -155,7 +155,7 @@ const About: FC = () => {
             ))}
           </div>
           <a
-            href="/CV/Ahmed Elazap - Frontend Developer.pdf"
+            href="/CV/AhmedElazap - Frontend Developer.pdf"
             target="_blank"
             className="border-main bg-main hover:text-main w-fit md:mt-8 rounded-full border-2 px-2 py-1 text-lg font-light text-black transition duration-150 hover:bg-transparent md:px-6 md:py-4"
           >
